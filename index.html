@@ -4,29 +4,92 @@
   <meta charset="utf-8">
   <title>Eons Ahead</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--
-  <link
-    type = "text/css"
-    rel = "stylesheet"
-    href = "https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
--->
   <link 
-    rel-style="stylesheet"
-    href="https://d396qusaz40orc.cloudfront.net/startup%Fbootstrap-combined.no-icons.min.css">
+    rel="stylesheet"
+    href="https://d396qusza40orc.cloudfront.net/startup%Fcode%2Fbootstrap-combined.no-icons.min.css">
+  <link 
+    rel="stylesheet"
+    href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+  <link
+    rel="stylesheet"
+    href="https://d396qusza40orc.cloudfront.net/startup%Fcode%2Fsocial-buttons.css">
+
+
+  <script 
+    src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js">
+  </script>
+
+<!--
+  <script
+    src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"
+  </script>
+-->
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800">
+
+
   <style type = "text/css">
-    body {
-      padding-top: 20px;
-      padding-bottom: 40px;
+    /* Large desktop */
+    @media (min-width: 980px) {
+      body {
+        padding-top: 60px;
+      }
+      .linediv-l {
+        border-right: 1px white solid;
+      }
+      .linediv-r {
+        border-left: 1px white solid;
+      }
     }
 
+    /* Landscape phones and down */
+    @media (max-width: 480px) {
+      .copy {
+        padding: 2.5% 10%;
+      }
+      .linediv-l {
+        border-bottom: 1px white solid;
+      }
+      .linediv-r {
+        border-top: 1px white solid;
+      } 
+    }
+
+    body {
+      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+/*
+      padding-top: 20px;
+      padding-bottom: 40px;
+*/
+    }
+
+/*
     .container {
       width: 960px;
     }
+*/
 
     p.lead {
+/*
       padding-top: 15px;
+*/
+      padding-top: 1.5%;
+      font-size: 24px;
+      line-height: 30px;
     }
 
+    p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  
     .navigation, .pitch, .section1, .section2, .faq, .footer {
       padding: 10px 0px 10px 0px;
     }
@@ -55,6 +118,30 @@
 
 </head>
 <body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button 
+          type="button" 
+          class="btn btn-navbar"
+          data-toggle="collapse"
+          data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Eonsahead</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="row navigation">
       <div class="span2 logo">
