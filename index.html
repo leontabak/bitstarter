@@ -63,23 +63,32 @@
     }
 
     body {
+      background: #BBCCFF;
       font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     }
 
     .heading, .subheading {
+      color: #2266AA;  
       font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
       text-align: center;
     }
 
     p.lead {
+      color: #0000FF;
       padding-top: 1.5%;
       font-size: 24px;
       line-height: 30px;
     }
 
     p {
+      color: #112233;
       font-size: 18px;
       line-height: 24px;
+    }
+
+    .leadsentence {
+      font-weight: bold;
+      color: #AA66FF;
     }
 
     /* Video pitch and Action */
@@ -97,7 +106,7 @@
     }
    
     .video, .thermometer, .order, .social, .statistics {
-      text-align: center;
+      tex-align: center;
     }
 
     .statistics h3, .statistics p {
@@ -116,7 +125,8 @@
     }
 
     .footer {
-      color: #cccccc;
+/*      color: #cccccc; */
+      color: #2266AA;  
       text-align: center;
     }
 
@@ -125,7 +135,8 @@
     }
 
     .footer a {
-      color: #ccccff;
+/*      color: #ccccff; */
+      color: #662288;   
     }
  
   </style>
@@ -159,21 +170,22 @@
 <div class="container">
   <div class="row-fluid heading">
     <div class="span12">
-      <h1>Product</h1>
+      <h1>C2B</h1>
     </div>
   </div>
   <div class="row-fluid subheading">
     <div class="span12">
       <p class="lead">
-        One sentence description.
+        C2B (&ldquo;College to Business&rdquo; and &ldquo;See to Be&rdquo;)
+        brings students and people in business together.
       </p>
     </div>
   </div>
 
   <div class="row-fluid pitch">
     <div class="span5 offset1 video">
-      <img class="img-polaroid" src="http://placehold.it/480x300">
-    </div>
+      <img class="img-polaroid" src="http://www.eonsahead.com/images/leon-ross480x300.jpg"/>
+   </div>
 
     <!-- We define a new 'actions' div to contain statistics, order, and share buttons -->
     <div class="span5 actions">
@@ -181,20 +193,20 @@
         <div class="statistics">
           <div class="span4">
             <div class="linediv-l">
-              <h3>1000</h3>
-              <p>backers</p>
+              <h3>1000+</h3>
+              <p>students</p>
             </div>
           </div>
           <div class="span4">
             <div class="linediv-c">
-              <h3>$6000</h3>
-              <p>of $10,000</p>
+              <h3>Many</h3>
+              <p>interests</p>
             </div>
           </div> 
           <div class="span4">
             <div class="linediv-r">
-              <h3>10</h3>
-              <p>days left</p>
+              <h3>More</h3>
+              <p>careers</p>
             </div>
           </div>
         </div>
@@ -206,7 +218,7 @@
         </div>
       </div>
       <div class="span6 offset3 order">
-        <button class="btn btn-success btn-large">Preorder</button>
+        <button class="btn btn-success btn-large">Inquire</button>
       </div>
       <div class="span8 offset2 social">
         <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
@@ -217,27 +229,60 @@
 
 <div class="row-fluid section1">
   <div class="span5 offset1 asset">
-    <img class="img-polaroid" src="http://placehold.it/480x300">
+    <img class="img-polaroid" src="http://www.eonsahead.com/images/king-chapel480x300.jpg"/>
   </div>
   <div class="span5 copy">
     <p>
-      I must go down to the sea again, to the lonely sea 
-      and sky. And all I need is a tall ship and a star
-      to steer her by. 
+      <span class="leadsentence">Already out of school and into a career?</span>
+      You possess knowledge, skills, and perspectives
+      that students cannot obtain from books.
+      Whether you have been working for two years,
+      ten years, or thirty years, we want to learn
+      from your experience.
+      Come visit us or let us visit you.
+      Let's enjoy a conversation over a meal.
     </p>
+
+    <p> 
+      <span class="leadsentence">What's in it for you?</span>
+      Lunch or dinner is on us.
+      You become a professor for an hour without
+      having to prepare any lectures or grade any examinations.
+      You are the authority.
+      We write down what you say.
+      We give you the part of our job that is most fun&mdash;engagement with
+      bright and curious young people.
+    </p>
+
   </div>
 </div>
 
 <div class="row-fluid section2">
   <div class="span5 offset1 copy copy-right">
     <p>
-      I must go down to the sea again, to the lonely sea 
-      and sky. And all I need is a tall ship and a star
-      to steer her by. 
+      <span class="leadsentence">Now enrolled in college?</span>
+      You will not learn all that you want 
+      to know in classrooms.
+      Let us introduce you to people who, starting at
+      places similar to places you now occupy,
+      went on to build satisfying careers and lives.
+      We will make the conversations easy.
+      See the variety of opportunities others have found.
+      Discover paths that will take you to where you want to be.
     </p>
+
+    <p>
+      <span class="leadsentence">The choice of a major course of study
+      is not the same as the choice of a career.</span>
+      Even more than plans, happy accidents lead most people to 
+      their life's calling.
+      Begin your search for unexpected ways to apply your
+      academic interests in service to other people.
+    </p>
+ 
   </div>
   <div class="span5 asset">
-    <img class="img-polaroid" src="http://placehold.it/480x300">
+    <img class="img-polaroid" src="http://www.eonsahead.com/images/student-symposium480x300.jpg"/>
   </div>
 </div>
 
@@ -252,12 +297,16 @@
             data-toggle="collapse"
             data-parent="#accordion2"
             href="#collapseOne">
-            What does FAQ stand for?
+            Where have students gone in the past?
           </a>
         </div>
         <div id="collapseOne" class="accordion-body collapse">
           <div class="accordion-inner">
-            Frequently Asked Question.
+            Students have visited a company that makes instruments
+            for aircraft, a company that makes ruggedized computers,
+            a large hospital (where they viewed equipment for the
+            generation of power in emergencies), and an historical
+            society (where they saw a restored low head hydroelectric dam).
           </div>
         </div>
       </div>
@@ -268,12 +317,16 @@
             data-toggle="collapse"
             data-parent="#accordion2"
             href="#collapseTwo">
-            What is a Frequently Asked Question?
+            With whom have students conversed?
           </a>
         </div>
         <div id="collapseTwo" class="accordion-body collapse">
           <div class="accordion-inner">
-            A question which is commonly asked by users.
+            Students have met a marketing manager for a major
+            league team, reporters and editorialists who contribute
+            to the nation's most prominent newspapers, a physician
+            who is also a consulting engineer and an editor of
+            a leading scientific journal.
           </div>
         </div> 
       </div>
