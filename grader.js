@@ -28,8 +28,13 @@ References:
 var fs = require("fs");
 var program = require("commander");
 var cheerio = require("cheerio");
+var rest = require("restler");
+var sys = require("util");
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
+var URL_DEFAULT = "http://aqueous-mesa-4000.herokuapp.com";
+
+var globalChecksFile = "";
 
 var assertFileExists = function(infile) {
   var instr = infile.toString();
@@ -59,6 +64,44 @@ var checkHtmlFile = function(htmlfile, checksfile) {
   return out;
 };
 
+var urlToString = function(result) {
+  if( result instanceof Error ) {
+    sys.puts( "Error: " + result.message );
+    this.retry(5000);
+  } // if
+  else {
+//    sys.puts(result);
+
+    $ = cheerio.load(result);
+    var checks = loadChecks(globalChecksFile).sort();
+    var out = {};
+    for(var ii in checks) {
+      var present = $(checks[ii]).length > 0;
+      out[checks[ii]] = present;
+    } // for
+    var checkJson = out;
+    var outJson = JSON.stringify(checkJson, null, 4);
+    console.log(outJson); 
+  } // else
+};
+
+var checkWebPage = function(url, checksfile) {
+  var htmlstring = rest.get(url).on("complete", urlToString);
+  globalChecksFile = checksfile;
+
+  /*
+  $ = cheerio.load(globalString);
+  var checks = loadChecks(checksfile).sort();
+  var out = {};
+  for(var ii in checks) {
+    var present = $(checks[ii]).length > 0;
+    out[checks[ii]] = present;
+  } // for
+  return out;
+  */
+
+};
+
 var clone = function(fn) {
   // Workaround for commander.js issue.
   // http://stackoverflow.com/a/6772648
@@ -69,11 +112,23 @@ var clone = function(fn) {
 if(require.main == module) {
   program
     .option("-c, --checks <check_file>", "Path to checks.json", clone(assertFileExists), CHECKSFILE_DEFAULT)
-    .option("-f, --file <html_file>", "Path to index.html", clone(assertFileExists), HTMLFILE_DEFAULT)
+    .option("-f, --file <html_file>", "Path to index.html", clone(assertFileExists))
+    .option("-u, --url <address_on_web>", "Address on Web") 
     .parse(process.argv);
-  var checkJson = checkHtmlFile(program.file, program.checks);
-  var outJson = JSON.stringify(checkJson, null, 4);
-  console.log(outJson); 
+
+  if( program.checks && program.file ) {
+    // console.log( " ---- file version ---- " + program.file );
+    var checkJson = checkHtmlFile(program.file, program.checks);
+    var outJson = JSON.stringify(checkJson, null, 4);
+    console.log(outJson); 
+  } // if
+  else if( program.checks && program.url ) {
+    // console.log( " ---- url version ---- " + program.url );
+    var checkJson = checkWebPage(program.url, program.checks);
+    // var outJson = JSON.stringify(checkJson, null, 4);
+    // console.log(outJson); 
+  } // else if
+
 }
 else {
   exports.checkHtmlFile = checkHtmlFile;
